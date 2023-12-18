@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="est.css">
+    <title>Login</title>
+    <style>
+        body { margin: 0; }
+        .main-login { display: flex; justify-content: center; align-items: center; height: 100vh; background: #BBE4B7; }
+        .left-login, .right-login { width: 50vw; height: 100vh; display: flex; justify-content: center; align-items: center; }
+        .left-login { flex-direction: column; }
+        .left-login > h1 { color: #2b1346; }
+        .left-login-image { width: 35vw; }
+        .right-login { display: flex; justify-content: center; align-items: center; }
+        .card-login { width: 60%; display: flex; justify-content: center; align-items: center; flex-direction: column; padding: 30px 35px; background: #3b3351; border-radius: 20px; box-shadow: 0px 10px 40px #00000056; }
+        .card-login > h1 { color: #BBE4B7; font-weight: 800; margin: 0; }
+        .textfield { width: 100%; display: flex; flex-direction: column; align-content: flex-start; justify-content: center; margin: 10px 0px; }
+        .textfield > input { width: 100%; border: none; border-radius: 10px; padding: 15px; background: #514869; color: #f0ffffde; font-size: 12pt; box-shadow: 0px 10px 40px #00000056; outline: none; box-sizing: border-box; }
+        .textfield > label { color: #efe9e956; margin-bottom: 10px; }
+        .textfield > input::placeholder { color: #f0ffff94; }
+        .btn-login { width: 100%; padding: 16px 0px; margin: 25px; border: none; border-radius: 8px; outline: none; text-transform: uppercase; font-weight: 800; letter-spacing: 3px; color: #2b134b; background: #BBE4B7; cursor: pointer; box-shadow: 0px 10px 40px -12px #00ff8052; }
+        .menu { width: 90%; height: 50px; font-family: Arial, Helvetica, sans-serif; color: #2b134b; text-align: right; }
+        .menu ul { list-style: none; position: relative; text-align: right; }
+        .menu ul li { width: 100px; float: right; }
+        .menu a { padding: 15px; display: block; text-decoration: none; text-align: center; background-color: #ffffff; color: #9CC398; text-align: right; }
+        .menu ul ul { position: absolute; visibility: hidden; }
+        .menu ul li:hover ul { visibility: visible; }
+        .menu a:hover { background-color: #2b1346; color: #ffffff; }
+        .menu ul ul li { float: none; }
+        h4 { color: #ffffff; }
+    </style>
+</head>
+<body>
+    <div class="main-login">
+        <div class="left-login">
+            <h1>Faça Login<br>E consulte seus médicos</h1>
+            <img src="medicine-animate.svg" class="left-login-image" alt="medicine animação">
+        </div>
+        <form action="/login" method="post" class="right-login">
+            <div class="card-login">
+                <h1>LOGIN</h1>
+                <div class="textfield">
+                    <label for="usuario">Usúario</label>
+                    <input type="text" placeholder="Login" id="login" name="username" required>
+                </div>
+                <div class="textfield">
+                    <label for="senha">Senha</label>
+                    <input type="password" placeholder="Senha" id="senha" name="password" required>
+                </div>
+                <button class="btn-login">Login</button>
+            </div>
+        </form>
+    </div>
+    <div class="menu">
+        <ul>
+            <li><a href="#">=</a>
+                <ul>
+                    <li><a href="loginmedico.html">Login Médico</a></li>
+                    <li><a href="homepage.html">Home</a></li>
+                    <li><a href="cadastro.html">Cadastro</a></li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+</body>
+</html>
+**Home\views\Cardiologista.html**
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="home.css">
+    <title>Document</title>
+</head>
+<body>
+    <section> 
+        <div class="circle"></div>
+        <header>
+            <a href="#"><img src="Logo.png" class="logo"></a>
+            <ul><!-- You can add menu items here if needed --></ul>
+        </header>
+        <div class="content">
+            <div class="textBox">
+                <h2>Cardiologista</h2>
+                <h3>Experiência em:</h3>
+                <p>- Cardiologia Ambulatorial</p>
+                <p>- Cuidados Continuados</p>
+                <p>- Medicina Preventiva</p>
+                <h3> Doenças tratadas:</h3>
+                <p>- Hipertensão</p>
+                <p>- Arritmia</p>
+                <h3> Formação em:</h3>
+                <p>- Medicina Universidade Federal do RJ </p>
+                <p>- Residência em Cardiologia Inst. Nacional Cardiologia </p>
+                <p>- Residência em Clínica Médica H. Andaraí</p>
+                <a href="medicos.html">Volte a página</a>
+            </div>
+            <div class="ImgBox">
+                <img src="cardiologist-animate.svg" class="left-login-image" alt="medicine animate">
+            </div>
+        </div>
+    </section>
+    <script type="text/javascript">
+        function imgSlider(anything) {
+            document.querySelector('.left-login-image').src = anything;
+        }
+    </script>
+</body>
+</html>
+**Home\views\consultas.html**
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Consultas</title>
+    <link rel="stylesheet" type="text/css" href="consultas.css">
+</head>
+<body>
+    <nav class="menu">
+        <ul><li><a href="#">=</a><ul><li><a href="homepage.html">Home</a></li><li><a href="homemedico.html">HomeM</a></li><li><a href="homeadmin.h">HomeA</a></li><li><a href="homepaciente.html">HomeP</a></li></ul></li></ul>
+    </nav>
+
+    <div class="consulta">
+        <h1>Consultas</h1>
+        <form>
+            <label for="nome">Nome:</label><input type="text" id="nome" required>
+            <label for="data">Data da consulta:</label><input type="date" id="data" required>
+            <label for="medico">Médico:</label><select id="medico" required>
+                <option value="ana_clara">Dra. Ana Clara</option>
+                <option value="nicolas_cardozo">Dr. Nicolas Cardozo</option>
+                <option value="gabriel_donatti">Dr. Gabriel Donatti</option>
+                <option value="adria_santos">Dra. Adria Santos</option>
+                <option value="geovanna_varjao">Dra. Geovanna Varjão</option>
+            </select>
+            <label for="especialidade">Especialidade:</label><select id="especialidade" required>
+                <option value="odontologia">Dra. Ana Clara: Odontologia</option>
+                <option value="cardiologia">Dr. Nicolas Cardozo: Cardiologista</option>
+                <option value="dermatologia">Dr. Gabriel Donatti: Dermatologista</option>
+                <option value="pediatria">Dra. Adria Santos: Pediatra</option>
+                <option value="psiquiatria">Dra. Geovanna Varjão: Psiquiatra</option>
+            </select>
+            <label for="observacoes">Observações</label><input type="text" id="observacoes">
+            <button type="submit">Agendar Consulta</button>
+        </form>
+    </div>
+</body>
+</html>
+Dermatologista 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="home.css">
+    <title>Document</title>
+</head>
+<body>
+    <section>
+        <div class="circle"></div>
+        <header><a href="#"><img src="Logo.png" class="logo"></a><ul></ul></header>
+        <div class="content">
+            <div class="textBox">
+                <h2>Dermatologista</h2>
+                <h3>Experiência em:</h3>
+                <p>- Biópsia de Pele e Eletrocautério</p>
+                <p>- Dermatologia Clínica</p>
+                <p>- Queda de Cabelo</p>
+                <h3>Doenças tratadas:</h3>
+                <p>- Cicatriz</p>
+                <p>- Câncer de Pele</p>
+                <p>- Melasma</p>
+                <h3>Formação em:</h3>
+                <p>- Dermatologia e Cirurgia Plástica, Universidade Estadual de Londrina, 1980</p>
+                <a href="medicos.html">Volte a página</a>
+            </div>
+            <div class="ImgBox"><img src="winning-the-battle-against-coronavirus-animate.svg" class="left-login-image" alt="medicine animate"></div>
+        </div>
+    </section>
+    <script type="text/javascript">function imgSlider(anything){document.querySelector('.left-login-image').src = anything;}</script>
+</body>
+</html>
+**Home\views\localização.html**
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="localizacao.css">
+    <title>Document</title>
+</head>
+<body>
+    <nav class="menu"><ul><li><a href="#">=</a><ul><li><a href="homepage.html">Home</a></li><li><a href="homepaciente.html">HomeP</a></li><li><a href="homemedico.html">HomeM</a></li><li><a href="homeadmin.html">HomeA</a></li></ul></li></ul></nav>
+    <h1>Localização:</h1>
+    <img src="Localizacao.png" class="imagem" alt="Localização">
+    <h3>Sua Localização fácil e precisa: R. dos Jacarandás</h3>
+    <div class="circle"></div>
+</body>
+</html>
+**Home\views\medicos.html**
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Médicos</title>
+    <link rel="stylesheet" href="medicos.css">
+</head>
+
+<body>
+    <nav class="menu"><ul><li><a href="#">=</a><ul><li><a href="homepage.html">Home</a></li><li><a href="homeadmin.html">Admin</a></li></ul></li></ul></nav>
+    <h1>Saiba mais sobre nossos profissionais:</h1>
+
+    <div class="foto-container">
+        <a href="odontologista.html"><img src="dentista.jpeg" alt="Odontologista"><div class="Medicos"><p>Odontologista</p></div></a>
+        <a href="Cardiologista.html"><img src="cardiologista.jpeg" alt="Cardiologista"><div class="Medicos"><p>Cardiologista</p></div></a>
+        <a href="Dermatologista.html"><img src="dermatologista.jpeg" alt="Dermatologista"><div class="Medicos"><p>Dermatologista</p></div></a>
+    </div>
+
+    <div class="foto-container">
+        <a href="Pediatra.html"><img src="medica.jpeg" alt="Pediatra"><div class="Medicos"><p>Pediatra</p></div></a>
+        <a href="psicologa.html"><img src="psicologa2.jpg" alt="Psicóloga"><div class="Medicos"><p>Psicóloga</p></div></a>
+    </div>
+    <div class="circle"></div>
+</body>
+</html>
+**Home\views\odontologista.html**
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="home.css">
+    <title>Document</title>
+</head>
+<body>
+    <section>
+        <div class="circle"></div>
+        <header>
+            <a href="#"><img src="Logo.png" class="logo"></a>
+            <ul></ul>
+        </header>
+        <div class="content">
+            <div class="textBox">
+                <h2>Odontologia</h2>
+                <h3>Experiência em:</h3>
+                <p>- Odontopediatria</p>
+                <p>- Ortodontia e Ortopedia Facial</p>
+                <p>- Disfunção Temporomandibular e Dor Orofacial</p>
+                <h3>Doenças tratadas:</h3>
+                <p>- Bruxismo</p>
+                <p>- Diastema</p>
+                <p>- Má Oclusão</p>
+                <h3>Formação em:</h3>
+                <p>- Mestrado em Ortodontia e Ortopedia Funcional dos Maxilares - Invisalign Top Doctor.</p>
+                <a href="medicos.html">Volte a página</a>
+            </div>
+            <div class="ImgBox">
+                <img src="lip-filler-animate.svg" class="left-login-image" alt="medicine animate">
+            </div>
+        </div>
+    </section>
+    <script>
+        function imgSlider(anything){
+            document.querySelector('.left-login-image').src = anything;
+        }
+    </script>
+</body>
+</html>
+**Home\views\pacientes.html** 
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Pacientes</title>
+    <link rel="stylesheet" href="pacientes.css">
+</head>
+<body>
+    <div class="card-login">
+        <table>
+            <thead>
+                <tr>
+                    <th>Nome</th>
+                    <th>Data de nascimento</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr><td>Franz kafka de Oliveira</td><td>03/07/1983</td></tr>
+                <tr><td>Carlos Silva de Souza</td><td>15/06/2006</td></tr>
+                <!-- Add more rows as needed -->
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>
+**Home\views\Pediatra.html**
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="home.css">
+    <title>Document</title>
+</head>
+<body>
+    <section>
+        <div class="circle"></div>
+        <header>
+            <a href="#"><img src="Logo.png" class="logo"></a>
+            <ul></ul>
+        </header>
+        <div class="content">
+            <div class="textBox">
+                <h2>Pediatra</h2>
+                <h3>Experiência em:</h3>
+                <p>- Emergências Pediátricas</p>
+                <p>- Pediatría Ambulatorial</p>
+                <p>- Puericultura</p>
+                <h3>Doenças tratadas:</h3>
+                <p>- Doenças respiratórias</p>
+                <p>- Febre em crianças</p>
+                <p>- Dor Abdominal</p>
+                <h3>Formação em:</h3>
+                <p>- Formação em Medicina, UFPR</p>
+                <p>- Residência Médica em Pediatria, UFPR</p>
+                <p>- Mestrado em Pediatria, UFPR</p>
+                <a href="medicos.html">Volte a página</a>
+            </div>
+            <div class="ImgBox">
+                <img src="pediatrician-animate.svg" class="left-login-image" alt="medicine animate">
+            </div>
+        </div>
+    </section>
+    <script>
+        function imgSlider(anything){
+            document.querySelector('.left-login-image').src = anything;
+        }
+    </script>
+</body>
+</html>
+**Home\views\planos.html**
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Planos</title>
+    <link rel="stylesheet" href="planos.css">
+</head>
+<body>
+    <nav class="menu">
+        <ul><li><a href="#">=</a><ul><li><a href="homepage.html">Home</a></li><li><a href="homepaciente.html">HomeP</a></li><li><a href="homemedico.html">HomeM</a></li><li><a href="homeadmin.html">HomeA</a></li></ul></li></ul>
+    </nav>
+    <div class="planos">
+        <div class="plano">
+            <h1>Plano Individual</h1>
+            <p>AMBULATORIAL<br>Ambulância + procedimentos cobertos.</p>
+            <p>HOSPITALAR<br>Internação em quartos individuais + todo serviço necessário.</p>
+            <p>MEDICAMENTOS<br>Até 30% de desconto em qualquer medicamento.</p>
+            <a href="planosdois.html" class="preço"> <p>R$ 265,40</p> </a>
+        </div>
+
+        <div class="plano">
+            <h1>Plano Familiar</h1>
+            <p>AMBULATORIAL<br>Ambulância + procedimentos cobertos.</p>
+            <p>HOSPITALAR<br>Internação em quartos individuais + todo serviço necessário.</p>
+            <p>MEDICAMENTOS<br>Até 30% de desconto em qualquer medicamento.</p>
+            <a href="planosdois2.html" class="preço"> <p>R$ 531,40</p> </a>
+        </div>
+    </div>
+</body>
+</html>
+**Home\views\planosdois2.html**
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="planosdois.css">
+    <title>Document</title>
+</head>
+<body>
+    <nav class="menu">
+        <ul>
+            <li><a href="#">=</a>
+                <ul>
+                    <li><a href="homepaciente.html">Home</a></li>
+                </ul>
+            </li>
+        </ul>
+    </nav> 
+    <div class="consulta">
+        <h1>Plano Familiar</h1>
+        <form>
+            <label for="nome">Nome Completo:</label>
+            <input type="text" id="nome" required>
+            <label for="email">E-mail:</label>
+            <input type="email" id="email" required>
+            <label for="senha">Senha:</label>
+            <input type="password" id="senha" required>
+            <label for="confirmarSenha">Confirmar senha:</label>
+            <input type="password" id="confirmarSenha" required>
+            <label for="cpf">CPF:</label>
+            <input type="text" id="cpf" required>
+            <label for="rg">RG:</label>
+            <input type="text" id="rg" required>
+            <label for="telPessoal">Telefone pessoal:</label>
+            <input type="tel" id="telPessoal" required>
+            <label for="telResidencial">Telefone residencial:</label>
+            <input type="tel" id="telResidencial" required>
+            <label for="formaPagamento">Forma de pagamento:</label>
+            <select id="formaPagamento" required>
+                <option value="">Visa</option>
+                <option value="">Pix</option>
+                <option value="">Mercado Pago</option>
+                <option value="">Boleto bancário</option>
+                <option value="">Cartão de Débito</option>
+                <option value="">Cartão de crédito</option>
+            </select>
+            <a href="planostres.html" class="Medicos"> <p>Próximo</p> </a>
+        </form>
+    </div>
+</body>
+</html>
+**Home\views\planostres.html**
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="planostres.css">
+    <title>Documento</title>
+</head>
+<body>
+    <nav class="menu">
+        <ul>
+            <li><a href="#">=</a>
+                <ul>
+                    <li><a href="homepaciente.html">Home</a></li>
+                </ul>
+            </li>
+        </ul>
+    </nav>
+    <div class="consulta">
+        <h1>Plano Individual</h1>
+        <form>
+            <label for="cartaoNome">Nome do cartão:</label>
+            <input type="text" id="cartaoNome" required>
+            <label for="validadeCartao">Dados de validade do cartão:</label>
+            <input type="text" id="validadeCartao" required>
+            <label for="titularNome">Nome do titular:</label>
+            <input type="text" id="titularNome" required>
+            <label for="codigoSeguranca">Código de segurança:</label>
+            <input type="text" id="codigoSeguranca" required>
+            <label for="enderecoCobranca">Endereço de cobrança:</label>
+            <input type="text" id="enderecoCobranca" required>
+            <h1>Meus Dados</h1>
+            <label for="nomeCompleto">Nome Completo:</label>
+            <input type="text" id="nomeCompleto" required>
+            <label for="email">E-mail:</label>
+            <input type="text" id="email" required>
+            <label for="confirmarEmail">Confirmar E-mail:</label>
+            <input type="text" id="confirmarEmail" required>
+            <label for="cpfCnpj">CPF/CNPJ:</label>
+            <input type="text" id="cpfCnpj" required>
+            <a href="homepaciente.html" class="Médicos"> <p>Finalizar</p> </a>
+        </form>
+    </div>
+</body>
+</html>
+**Home\views\psicologa.html**
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="home.css">
+    <title>Document</title>
+</head>
+<body>
+    <section> 
+        <div class="circle"></div>
+        <header>
+            <a href="#"><img src="Logo.png" class="logo"></a>
+            <ul></ul>
+        </header>
+        <div class="content">
+            <div class="textBox">
+                <h2>Psicologia</h2>
+                <h3>Experiência em:</h3>
+                <p>- Psicoterapia de Casal</p>
+                <p>- Psicoterapia para Adolescentes</p>
+                <h3> Doenças tratadas:</h3>
+                <p>- Depressão</p>
+                <p>- Ansiedade</p>
+                <p>- Transtorno depressivo</p>
+                <h3> Formação em:</h3>
+                <p>- Psicologia, UNIP, 2010</p>
+                <p>- Especialização Logoterapia e Análise Existencial, SOBRAL, 2019</p>
+                <p>- Gestão Estratégica de Empresas, UNICAMP, 2016</p>
+                <a href="medicos.html">Volte a página</a>
+            </div>
+            <div class="ImgBox">
+                <img src="psychologist-animate.svg" class="left-login-image" alt="medicine animate">
+            </div>
+        </div>
+    </section>
+    <script>
+        function imgSlider(anything){
+            document.querySelector('.left-login-image').src = anything;
+        }
+    </script>
+</body>
+</html>
+**Home\views\senhasecadastro.html**
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="senhasecadastro.css">
+    <title>Document</title>
+</head>
+<body>
+    <img src="usuario1.png">
+    <img src="usuario2.png">
+    <img src="usuario3.png">
+    <img src="Login1.png">
+</body>
+</html>
